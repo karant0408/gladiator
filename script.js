@@ -10,6 +10,11 @@ fetch("https://mobcart890.herokuapp.com/users")
         output+=`<td>${data[i]['brand']}</td>`
         output+=`<td>${data[i]['ram']}</td>`
         output+=`<td>${data[i]['price']}</td>`
+        output += `<td>`;
+		output += `<a href="edit.html?id=${records[i]._id}"><button class="btn btn-primary">Edit</button></a>`;
+		output += '&nbsp;&nbsp;';
+		output += `<button class="btn btn-danger" onclick=deleteData('${records[i]._id}')>Delete</button>`;
+		output += `</td>`;
         output+=`</tr>`
     }
     document.getElementById('tbody').innerHTML=output
